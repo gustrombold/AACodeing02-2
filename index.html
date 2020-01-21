@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +27,10 @@ body {
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </script>
 <audio id="sad" controls>
-<source src="snd/sad.mp3" type="audio/mpeg">
+<source src="https://math.seattleacademy.org/garyanderson/snd/sad.mp3" type="audio/mpeg">
+</audio>
+<audio id="happy" controls>
+<source src="https://raw.githubusercontent.com/gustrombold/AACodeing02-2/master/snd/applause-01.mp3" type="audio/mpeg">
 </audio>
 <div>Timer: <span id="theTimer">0</span> Score: <span id="score">0</span></div>
 </div>
@@ -87,6 +89,9 @@ function onChange(evt) {
     $(this)
       .removeClass("incorrect")
       .addClass("correct");
+    if (Math.random() > 0.9) {
+      happy.play();
+    }
   } else {
     $(this)
       .removeClass("correct")
@@ -99,5 +104,8 @@ function onChange(evt) {
     </script>
 </body>
 </html>
+
+
+
 
 
